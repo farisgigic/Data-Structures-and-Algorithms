@@ -31,6 +31,7 @@ public class Main {
         System.out.println(queue.dequeue());
         System.out.println(queue.dequeue());
         queue.enqueue(4);
+        //
 
         System.out.println("queue size: " + queue.size());
 
