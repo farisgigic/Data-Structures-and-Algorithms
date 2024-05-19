@@ -1,11 +1,26 @@
 package Homework1;
 
-class Entry implements Comparable<Entry>{
+public class Entry implements Comparable<Entry> {
+    String name;
+    String streetAddress;
+    String city;
+    String postcode;
+    String country;
+    String phoneNumber;
 
-    //implement the relevant data attributes
+    public Entry(String name, String streetAddress, String city, String postcode, String country, String phoneNumber) {
+
+        this.name = name;
+        this.streetAddress = streetAddress;
+        this.city = city;
+        this.postcode = postcode;
+        this.country = country;
+        this.phoneNumber = phoneNumber;
+
+    }
+
     @Override
     public int compareTo(Entry other) {
-        // implement the actual compareTo logic (remove next line)
-        return 0;
+        return this.name.compareTo(this.name);
     }
 }
