@@ -1,10 +1,10 @@
-package Homework1;
-
-import java.util.Comparator;
+package Homework01;
 
 public class MergeSort {
 
     public static void sort(Entry[] entries) {
+        // int[] aux = new int[elements.length];  po tom principu pravimo formulu za nas entries
+
         Entry[] aux = new Entry[entries.length];
         sort(entries, aux, 0, entries.length - 1);
     }
@@ -39,8 +39,11 @@ public class MergeSort {
             }
         }
     }
-
+    // public static boolean less(int v, int w) {
+    //        return v < w; // produce an error
+    //    }
     public static boolean less(Entry v, Entry w) {
+
         return v.compareTo(w) < 0;
     }
 }

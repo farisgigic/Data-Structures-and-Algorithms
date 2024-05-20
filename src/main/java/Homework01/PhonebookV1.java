@@ -1,34 +1,39 @@
-package Homework1;
+package Homework01;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static Homework1.BinarySearch.search;
-import static Homework1.MergeSort.sort;
+import static Homework01.MergeSort.sort;
+
 
 public class PhonebookV1 {
     public static void main(String[] args) throws IOException {
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Loading the entries...");
+
+        System.out.println("Loading the entries");
+
         Entry[] entries = FileUtils.readFile("C:\\Users\\pc\\Desktop\\raw_phonebook_data.csv");
 
-        System.out.println("Sorting the entries...");
+        System.out.println("Sorting the entries");
+
         sort(entries);
-        System.out.println("Saving the sorted file...");
-        FileUtils.writeToFile(entries, "C:\\Users\\pc\\Desktop\\new_raw_phonebook_data2.csv");
-        System.out.println("================================");
-        System.out.println("System is ready.\n");
+
+        System.out.println("Saving the sorted file");
+        FileUtils.writeToFile(entries, "C:\\Users\\pc\\Desktop\\raw_phonebook_data1.csv");
+        System.out.println("=========================");
+        System.out.println("System is ready");
+        System.out.println("\n");
 
         while(true) {
             System.out.print("Enter the name that you wish to search for, or -1 to exit: ");
             String searchedName = scanner.nextLine();
 
             if (searchedName.equals("-1")) {
-                System.out.println("Thank you for using the phonebook");
+                System.out.println("Thank you for using the phonebook !");
                 break;
             } else {
-                int[] results = search(entries, searchedName);
+                int[] results = BinarySearch.search(entries, searchedName);
 
                 if (results.length != 0) {
                     System.out.println("Entries found: " + (results[1] - results[0] + 1));
